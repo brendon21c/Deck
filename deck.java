@@ -13,24 +13,31 @@ public class deck {
 
         Stack deckTest = Deck();
 
-        System.out.println(deckTest.size());
+        while (deckTest.size() > 0) {
 
-        System.out.println(deckTest);
+            String card1 = deckTest.pop().toString();
+            String card2 = deckTest.pop().toString();
+            String card3 = deckTest.pop().toString();
+            String card4 = deckTest.pop().toString();
+            String card5 = deckTest.pop().toString();
 
-        String card = deckTest.pop().toString();
+            System.out.println(card1);
+            System.out.println(card2);
+            System.out.println(card3);
+            System.out.println(card4);
+            System.out.println(card5);
+            System.out.println();
+            System.out.println();
 
-        System.out.println(card);
+            if (deckTest.size() < 0) {
+                break;
+            }
 
-        deckTest.insertElementAt(card, 0);
+        }
 
-        System.out.println(deckTest);
+        Stack deck2 = Deck();
 
-        String card2 = deckTest.pop().toString();
-
-        System.out.println(card2);
-
-        System.out.println(deckTest.size());
-
+        System.out.println(deck2);
 
 
         //String separated[] = card.split(" ");
@@ -91,10 +98,11 @@ public class deck {
             }
         }
 
-        for (int x = 0 ; x < deckRandom.size() ; x++) {
+        for (int x = 0 ; x < 52 ; x++) {
 
             String cardAdd = deckRandom.get(random.nextInt(deckRandom.size())).toString();
             deckFinal.push(cardAdd);
+            deckRandom.remove(cardAdd);
 
         }
 
