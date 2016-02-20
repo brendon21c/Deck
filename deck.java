@@ -1,9 +1,6 @@
 package com.Brendon;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Random;
-import java.util.Stack;
+import java.util.*;
 
 public class deck {
 
@@ -12,38 +9,21 @@ public class deck {
         // this section of code is me just playing with my final shuffled deck.
 
         Stack deckTest = Deck();
+        System.out.println(deckTest);
+        Collections.shuffle(deckTest);
+        System.out.println(deckTest);
 
-        while (deckTest.size() > 0) {
+        String card1 = deckTest.pop().toString();
+        String card2 = deckTest.pop().toString();
 
-            String card1 = deckTest.pop().toString();
-            String card2 = deckTest.pop().toString();
-            String card3 = deckTest.pop().toString();
-            String card4 = deckTest.pop().toString();
-            String card5 = deckTest.pop().toString();
+        String separated[] = card1.split(" ");
+        String separated2[] = card2.split(" ");
 
-            System.out.println(card1);
-            System.out.println(card2);
-            System.out.println(card3);
-            System.out.println(card4);
-            System.out.println(card5);
-            System.out.println();
-            System.out.println();
+        String sepNum = separated[0];
+        String sepNum2 = separated2[0];
 
-            if (deckTest.size() < 0) {
-                break;
-            }
-
-        }
-
-        Stack deck2 = Deck();
-
-        System.out.println(deck2);
-
-
-        //String separated[] = card.split(" ");
-        //String sepNum = separated[0];
-        //System.out.println(sepNum);
-
+        System.out.println(sepNum);
+        System.out.println(sepNum2);
 
     }
 
@@ -53,8 +33,7 @@ public class deck {
 
         LinkedList deck = new LinkedList();
         LinkedList suit = new LinkedList();
-        LinkedList deckRandom = new LinkedList();
-        Stack deckFinal = new Stack(); // final shuffled deck
+        Stack deckFinal = new Stack();
 
 
         for (int x = 0; x < 1 ; x++) { // Makes a list of suits.
@@ -93,18 +72,11 @@ public class deck {
 
             for (int y = 0 ; y < suit.size() ; y++) {
 
-                deckRandom.add(test + " of " + suit.get(y));
+                deckFinal.add(test + " of " + suit.get(y));
 
             }
         }
 
-        for (int x = 0 ; x < 52 ; x++) {
-
-            String cardAdd = deckRandom.get(random.nextInt(deckRandom.size())).toString();
-            deckFinal.push(cardAdd);
-            deckRandom.remove(cardAdd);
-
-        }
 
         return deckFinal;
 
