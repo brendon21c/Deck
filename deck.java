@@ -9,6 +9,28 @@ public class deck {
 
     public static void main(String[] args) {
 
+        // this section of code is me just playing with my final shuffled deck.
+
+        Stack deckTest = Deck();
+
+        System.out.println(deckTest.size());
+        String card = deckTest.pop().toString();
+        System.out.println(card);
+        System.out.println(deckTest);
+        deckTest.insertElementAt(card, deckTest.size());
+        System.out.println(deckTest);
+
+        //String separated[] = card.split(" ");
+        //String sepNum = separated[0];
+        //System.out.println(sepNum);
+
+        System.out.println(Deck().size());
+
+
+    }
+
+    public static Stack Deck() {
+
         Random random = new Random();
 
         LinkedList deck = new LinkedList();
@@ -65,22 +87,7 @@ public class deck {
 
         }
 
-        // this section of code is me just playing with my final shuffled deck.
-        System.out.println(deckFinal.size());
-        String card = deckFinal.pop().toString();
-        System.out.println(card);
-        System.out.println(deckFinal);
-        deckFinal.insertElementAt(card, deckFinal.size());
-        System.out.println(deckFinal);
-
-       //String separated[] = card.split(" ");
-        //String sepNum = separated[0];
-        //System.out.println(sepNum);
-
-        System.out.println(deckFinal.size());
-
-
-
+        return deckFinal;
 
 
     }
