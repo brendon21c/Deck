@@ -14,17 +14,28 @@ public class deck {
         Stack deckTest = Deck();
 
         System.out.println(deckTest.size());
+
+        System.out.println(deckTest);
+
         String card = deckTest.pop().toString();
+
         System.out.println(card);
+
+        deckTest.insertElementAt(card, 0);
+
         System.out.println(deckTest);
-        deckTest.insertElementAt(card, deckTest.size());
-        System.out.println(deckTest);
+
+        String card2 = deckTest.pop().toString();
+
+        System.out.println(card2);
+
+        System.out.println(deckTest.size());
+
+
 
         //String separated[] = card.split(" ");
         //String sepNum = separated[0];
         //System.out.println(sepNum);
-
-        System.out.println(Deck().size());
 
 
     }
