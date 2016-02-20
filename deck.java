@@ -1,7 +1,9 @@
 package com.Brendon;
 
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Random;
+import java.util.Stack;
 
 public class deck {
 
@@ -11,7 +13,8 @@ public class deck {
 
         LinkedList deck = new LinkedList();
         LinkedList suit = new LinkedList();
-        LinkedList deckFinal = new LinkedList();
+        LinkedList deckRandom = new LinkedList();
+        Stack deckFinal = new Stack(); // final shuffled deck
 
 
         for (int x = 0; x < 1 ; x++) { // Makes a list of suits.
@@ -50,18 +53,32 @@ public class deck {
 
             for (int y = 0 ; y < suit.size() ; y++) {
 
-                deckFinal.add(test + " of " + suit.get(y));
+                deckRandom.add(test + " of " + suit.get(y));
 
             }
         }
 
-        // This deals a card, plus starts working with a way to converting and comparing values.
+        for (int x = 0 ; x < deckRandom.size() ; x++) {
 
-        String card = deckFinal.get(random.nextInt(deckFinal.size())).toString();
-        String separated[] = card.split(" ");
-        String sepNum = separated[0];
+            String cardAdd = deckRandom.get(random.nextInt(deckRandom.size())).toString();
+            deckFinal.push(cardAdd);
+
+        }
+
+        // this section of code is me just playing with my final shuffled deck.
+        System.out.println(deckFinal.size());
+        String card = deckFinal.pop().toString();
         System.out.println(card);
-        System.out.println(sepNum);
+        System.out.println(deckFinal);
+        deckFinal.insertElementAt(card, deckFinal.size());
+        System.out.println(deckFinal);
+
+       //String separated[] = card.split(" ");
+        //String sepNum = separated[0];
+        //System.out.println(sepNum);
+
+        System.out.println(deckFinal.size());
+
 
 
 
